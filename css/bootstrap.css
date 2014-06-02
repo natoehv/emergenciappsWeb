@@ -6,9 +6,10 @@
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	background-color: #000080;
 }
 body {
   margin: 0;
@@ -270,7 +271,7 @@ th {
 html {
   font-size: 62.5%;
 
-  -webkit-tap-highlight
+  -webkit-tap-highlight;
   -color: rgba(0, 0, 0, 0);
 }
 body {
@@ -309,9 +310,9 @@ img {
   vertical-align: middle;
 }
 .img-responsive {
-  display: block;
-  max-width: 100%;
-  height: auto;
+	display: block;
+	max-width: 50%;
+	height: auto;
 }
 .img-rounded {
   border-radius: 6px;
@@ -359,10 +360,10 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: #FFFBF0;
 }
 h1 small,
 h2 small,
@@ -733,10 +734,10 @@ pre code {
   overflow-y: scroll;
 }
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
 }
 @media (min-width: 768px) {
   .container {
@@ -745,7 +746,7 @@ pre code {
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+	width: 970px;
   }
 }
 @media (min-width: 1200px) {
@@ -4931,11 +4932,11 @@ a.list-group-item-danger.active:focus {
   color: inherit;
 }
 .panel-footer {
-  padding: 10px 15px;
-  background-color: #f5f5f5;
-  border-top: 1px solid #ddd;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+	padding: 10px 15px;
+	background-color: #000033;
+	border-top: 1px solid #ddd;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
 }
 .panel-group {
   margin-bottom: 20px;

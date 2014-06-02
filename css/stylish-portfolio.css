@@ -23,7 +23,7 @@ body {
 	background-color: rgba(100,100,100,.8);
 }
 .vert-text h1:first-of-type, h3{
-	background-color: rgba(255,255,255,.6);
+
 }
 
 
@@ -216,7 +216,8 @@ i.service-icon {
 /* Portfolio */
 
 .portfolio {
-  padding: 50px 0;
+	padding: 50px 0;
+	background-color: #000033;
   
 }
 
@@ -236,13 +237,13 @@ i.service-icon {
 /* Call to Action */
 
 .call-to-action {
-  color: #ffffff;
-  background: #0a5175;
-  padding: 50px 0;
+	color: #ffffff;
+	padding: 50px 0;
+	background-color: #000033;
 }
 
 .call-to-action .btn {
-  margin: 10px;
+	margin: 10px;
 }
 
 /* Map */
@@ -254,7 +255,8 @@ i.service-icon {
 /* Footer */
 
 footer {
-  padding: 100px 0;
+	padding: 100px 0;
+	background-color: #000033;
 }
 
 .top-scroll {
@@ -273,6 +275,20 @@ i.scroll {
 i.scroll:hover {
   color: #0a5175;
 }
+  .zoom{
+		transition: 1.5s ease;
+ 		-moz-transition: 1.5s ease; /* Firefox */
+ 		-webkit-transition: 1.0s ease; /* Chrome - Safari */
+ 		-o-transition: 1.5s ease; /* Opera */
+	}
+	.zoom:hover{
+		transform : scale(2);
+		-moz-transform : scale(2); /* Firefox */
+		-webkit-transform : scale(1.5); /* Chrome - Safari */
+		-o-transform : scale(2); /* Opera */
+		-ms-transform : scale(2); /* IE9 */
+	}
+
 /* Responsive */
 
 @media (max-width: 768px) {
@@ -289,5 +305,6 @@ i.scroll:hover {
   .map {
 	height: 75%;
   }
+
 
 }
