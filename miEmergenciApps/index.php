@@ -55,7 +55,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
             <li class="active"><a href="index.php"><i class="fa fa-dashboard"></i> Mis Datos</a></li>
-            <li><a href="javascript:cargaContenido('contactos.php');" id="contactos"><i class="fa fa-bar-chart-o"></i> Contactos</a></li>
+            <li><a href="javascript:eventos.cargaContenido('contactos.php');" id="contactos"><i class="fa fa-bar-chart-o"></i> Contactos</a></li>
             <li><a href="tables.html"><i class="fa fa-table"></i> Tables</a></li>
             <li><a href="forms.html"><i class="fa fa-edit"></i> Forms</a></li>
             <li><a href="typography.html"><i class="fa fa-font"></i> Typography</a></li>
@@ -145,7 +145,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
             </ol>
             <div class="alert alert-success alert-dismissable">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              Bienvenido a tu panel principal de EmergenciApps, si quieres cambiar tu configuración de EmergenciApps puedes 
+              Bienvenido a tu panel principal de EmergenciApps, si quieres cambiar tu configuraciï¿½n de EmergenciApps puedes 
               acceder al panel de <a class="alert-link" href="javascript:cargaContenido('configuracion.php')">configuraciones</a> y modificar lo que
               estimes necesarios.
             </div>
@@ -162,7 +162,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
                   </div>
                   <div class="col-xs-6 text-right">
                     <p class="announcement-heading"><?php echo $nro;?></p>
-                    <p class="announcement-text">N° de Contactos</p>
+                    <p class="announcement-text">Nï¿½ de Contactos</p>
                   </div>
                 </div>
               </div>
@@ -428,7 +428,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
     <script src="js/morris/chart-data-morris.js"></script>
     <script src="js/tablesorter/jquery.tablesorter.js"></script>
     <script src="js/tablesorter/jquery.tablesorter.pager.js"></script>
-    <script src="js/miEmergenciApps.js"></script>
+    <script src="js/eventos.js"></script>
     
 
   </body>
