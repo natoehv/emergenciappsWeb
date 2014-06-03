@@ -1,5 +1,6 @@
 $(document).on('ready',function(){
 	/*
+         * momento en que carga por primera vez la página
     $('#contactos').on('click',function(){});
     $('#selectorid').on('blur',function(){});
     $('#selectorid').on('dblclick',function(){});
@@ -9,6 +10,7 @@ $(document).on('ready',function(){
 var eventos = (function() {
       console.log('Inicializa eventos');
       var variablePublica = "podria iniciar un widget aqui";
+      //configuracion para blockUI
       var configuracion = ({css: {border: 'none', 
 		        padding: '15px', 
 		        backgroundColor: '#000', 
@@ -22,7 +24,7 @@ var eventos = (function() {
 	 */
       return {
         /**
-         * 
+         * Metodo encargado de cargar contenido
          */
         cargaContenido: function(tabla) {
             if(tabla=="contactos.php"){
@@ -31,30 +33,30 @@ var eventos = (function() {
         },
         
         cargaContenedorContactos: function(recurso){
-    $(document).ajaxStart($.blockUI(configuracion)).ajaxStop($.unblockUI);
+            $(document).ajaxStart($.blockUI(configuracion)).ajaxStop($.unblockUI);
             $( "#page-wrapper" ).load( recurso, 
-		function (){
+                        function (){
 			/*
 			 * configura tabla para ordenar luego de cargar el recurso
 			 */
-		$('#tabla_contactos')
-	    .tablesorter({
-	        widthFixed: true,
-	        widgets: ['zebra']
-	    });
-		//Eventos para tabla 
-		$('#tbody input').click(function(){
-			alert("ha seleccionado checkbox: ");
-		});
-		/*
-		 * Inicializa validaci�n formulario nuevo contacto
-		 */
-		
-		/*
-		 * Inicializa accion botones
-		 */
-		$('#agregarContacto').on('click',mostrarFormulario);
-		} 
+                            $('#tabla_contactos')
+                            .tablesorter({
+                                widthFixed: true,
+                                widgets: ['zebra']
+                            });
+                            //Eventos para tabla 
+                            $('#tbody input').click(function(){
+                                alert("ha seleccionado checkbox: ");
+                            });
+                        /*
+                         * Inicializa validaci�n formulario nuevo contacto
+                         */
+
+                        /*
+                         * Inicializa accion botones
+                         */
+                            $('#agregarContacto').on('click',mostrarFormulario);
+                        } 
             );
         },
         /**
