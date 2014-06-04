@@ -74,8 +74,8 @@ var eventos = (function() {
 
 function mostrarFormulario(){
 	 $.blockUI({ 	message: $('#signup'),
-		 			onOverlayClick: $.unblockUI,
-		 			css: { 
+                        onOverlayClick: $.unblockUI,
+		 	css: { 
 		                width: '350px', 
 		                top: '10px', 
 		                left: '', 
@@ -85,9 +85,8 @@ function mostrarFormulario(){
 		                backgroundColor: '#000', 
 		                '-webkit-border-radius': '10px', 
 		                '-moz-border-radius': '10px', 
-		                opacity: .9, 
-		               
-		            } 
+		                opacity: .9,   
+		        } 
 		 
 	 }); 
 	 
