@@ -53,9 +53,9 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav side-nav">
-            <li class="active"><a href="index.php"><i class="fa fa-dashboard"></i> Mis Datos</a></li>
-            <li><a href="javascript:eventos.cargaContenido('contactos.php');" id="contactos"><i class="fa fa-bar-chart-o"></i> Contactos</a></li>
+          <ul class="nav navbar-nav side-nav" id="nav_izq">
+            <li class="active" id="li_inicio"><a href="index.php"><i class="fa fa-dashboard"></i> Mis Datos</a></li>
+            <li id="li_contacto"><a href="javascript:contacto.cargaContenido('contactos.php');" id="contactos"><i class="fa fa-bar-chart-o"></i> Contactos</a></li>
             <li><a href="tables.html"><i class="fa fa-table"></i> Tables</a></li>
             <li><a href="forms.html"><i class="fa fa-edit"></i> Forms</a></li>
             <li><a href="typography.html"><i class="fa fa-font"></i> Typography</a></li>
@@ -166,7 +166,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
                   </div>
                 </div>
               </div>
-              <a href="javascript:cargaContenido('contactos.php')">
+              <a href="javascript:contacto.cargaContenido('contactos.php')">
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
@@ -428,7 +428,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
     <script src="js/morris/chart-data-morris.js"></script>
     <script src="js/tablesorter/jquery.tablesorter.js"></script>
     <script src="js/tablesorter/jquery.tablesorter.pager.js"></script>
-    <script src="js/eventos.js"></script>
+    <script src="js/contacto.js"></script>
     
 
   </body>

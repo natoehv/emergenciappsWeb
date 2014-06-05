@@ -27,86 +27,50 @@
           <div class='col-lg-12'>
             <h2>Tabla de contactos 
             <button type="button" class="btn btn-primary btn-lg" id="agregarContacto">Agregar Contacto</button>
-            <button type="button" class="btn btn-success disabled">Guardar</button>
+            <button id="btnGuardarCambios" type="button" class="btn btn-success disabled">Guardar</button>
             </h2>
             <div class='table-responsive'>
               <table id="tabla_contactos" class='table table-bordered table-hover table-striped tablesorter'>
                 <thead>
                   <tr>
-                    <th class="header">N° Teléfono <i class='fa fa-sort'></i></th>
+                    <th class="header">Nï¿½ Telï¿½fono <i class='fa fa-sort'></i></th>
                     <th class="header">Nombre <i class='fa fa-sort'></i></th>
                     <th class="header">Apellidos <i class='fa fa-sort'></i></th>
                     <th class="header">Fecha Agregado <i class='fa fa-sort'></i></th>
    					<th class="header">Favorito</i></h>
-                    <th class="header">Acción</th>
+                    <th class="header">Acciï¿½n</th>
                   </tr>
                 </thead>
                 <tbody id="tbody">
    	<?php 	
    //Buscar contactos he insertar
    	if($resultado == null){
-   		//echo "<tr><td colspan='6' class='text-center'>todavía no haz agregado niun contacto</td></tr>";
+   		echo "<tr><td colspan='1' class='text-center' >todavÃ­a no haz agregado niun contacto</td></tr>";
    	}else{
 	   foreach ($resultado as $contacto){
 			// Se obtiene estado del contacto
-	   		echo "<tr class='.$prin->getEstadoContacto($contacto->getEstado()).' >";
-	   		echo "<td>.$contacto->getNroContacto().</td>";
+	   		echo "<tr class='".$prin->getEstadoContacto($contacto->getEstado())."' >";
+	   		echo "<td>".$contacto->getNroContacto()."</td>";
 	   		//Si el estado es > 0, entonces se pueden mostrar los siguientes datos
 	   		if($contacto->getEstado()>0){
+                            //Obtengo contaacto
 				$contacto2 = $prin->getUsuarioPorTelefono($contacto->getNroContacto());
-				echo "<td>.$contacto2->getNombre().</td>";
-				echo "<td>.$contacto2->getApellido().</td>";
-				echo "<td>.$contacto2->getFecha().</td>";
-				echo "</tr>";
-				//TODO Agregar checkbox con favorito
-				//TODO Agregar botones de accion
-			}
+				echo "<td>".$contacto->getNombre()." )".$contacto2->getNombre().")</td>";
+				echo "<td>".$contacto2->getApellido()."</td>";
+				echo "<td>".$contacto2->getFecha()."</td>";                              
+			}else{
+                            echo "<td>".$contacto->getNombre()."</td>";
+                            echo "<td></td>";
+                            echo "<td>".$contacto->getFecha()."</td>";
+                        }
+                        $checked = "";
+                        if($contacto->getFavorito()==1) $checked = "checked";
+                        echo "<td><input type='checkbox' id='".$contacto->getNroContacto()."' ".$checked."/> </td>";
+                        echo "<td><button type='button' id='".$contacto->getNroContacto()."' class='btn btn-warning'>Modificar</button>";
+                        echo "<button type='button' id='".$contacto->getNroContacto()."' class='btn btn-danger'>Eliminar</button></td></tr>";
 	   }
    	}
-   echo "   <tr class='success'>
-                    <td>+56983466538</td>
-                    <td>Javier</td>
-                    <td>Hermosilla</td>
-            		<td>05/04/2014</td>
-            		<td><input type='checkbox' value='+56983466538'></td>
-            		<td>
-            			<button type='button' class='btn btn-warning'>Modificar</button>
-            			<button type='button' class='btn btn-danger'>Eliminar</button>
-            		</td>
-                  </tr>
-                  <tr class='success'>
-                    <td>/about.html</td>
-                    <td>261</td>
-                    <td>33.3%</td>
-            		<td>05/04/2014</td>
-            		<td><input type='checkbox' ></td>
-            		<td>
-            			<button type='button' class='btn btn-warning'>Modificar</button>
-            			<button type='button' class='btn btn-danger'>Eliminar</button>
-            		</td>
-                  </tr>
-                  <tr class='warning'>
-                    <td>/sales.html</td>
-                    <td>665</td>
-                    <td>21.3%</td>
-                    <td>05/04/2014</td>
-            		<td><input type='checkbox'></td>
-            		<td>
-            			<button type='button' class='btn btn-warning'>Modificar</button>
-            			<button type='button' class='btn btn-danger'>Eliminar</button>
-            		</td>
-                  </tr>
-                  <tr class='danger'>
-                    <td>/blog.html</td>
-                    <td>9516</td>
-                    <td>89.3%</td>
-                    <td>05/04/2014</td>
-            		<td><input type='checkbox'></td>
-            		<td>
-            			<button type='button' class='btn btn-warning'>Modificar</button>
-            			<button type='button' class='btn btn-danger'>Eliminar</button>
-            		</td>
-                  </tr>
+   echo "
                 </tbody>
               </table>
               <div id='pager' class='pager'>
@@ -135,11 +99,11 @@
         </div><!-- /.row -->
    		
 
-   <div class='container' id='contenedorNuevoContacto' style='display:none;'>
-	   <legend>Sign Up</legend>
+   <div class='container' style='display:none; cursor:default'>
+	   <legend>Nuevo Contacto</legend>
 	   <div class='well'>
-	   <form id='signup' class='form-horizontal' method='post' action='success.php'>
-		   <legend style='color: white;'>Sign Up</legend>
+	   <form id='signup' class='form-horizontal' style='cursor:default;'>
+		   <legend style='color: white;'>Nuevo Contacto</legend>
 		   <div class='control-group'>
 			   <label class='control-label' style='color: white;'>Nombre</label>
 			   <div class='controls'>
@@ -150,13 +114,13 @@
 			   </div>
 		   </div>
 		   <div class='control-group '>
-			   <label class='control-label' style='color: white;'>Número Telefónico</label>
+			   <label class='control-label' style='color: white;'>Nï¿½mero Telefï¿½nico</label>
 				   	<div class='controls'>
 					   	<div class='input-prepend'>
 					   		<span class='add-on'><i class='icon-user'></i></span>
               				<label class='control-label' style='color: white;'>+</label>
               				<input maxlength='3' type='text' id='codA' name='codA' placeholder='569'>
-					   		<input maxlength='8'type='number' class='input-xlarge' id='lname' name='lname' placeholder='N° Telefonico'>
+					   		<input maxlength='8'type='number' class='input-xlarge' id='lname' name='lname' placeholder='Nï¿½ Telefonico'>
 				   		</div>
 			   		</div>
 		   	</div>
@@ -174,7 +138,7 @@
 		   <div class='control-group'>
 		   <label class='control-label'></label>
 				<div class='controls'>
-			   		<button type='submit' class='btn btn-success' >Agregar Contacto</button>
+			   		<button class='btn btn-success' >Agregar Contacto</button>
 			   	</div>
 		   
 		   </div>
@@ -185,7 +149,7 @@
    </div>
               		";
    }else{
-	echo "<script>alert('No haz iniciado sesión, debes iniciar sesión para administrar tu cuenta.');</script>";
+	echo "<script>alert('No haz iniciado sesiï¿½n, debes iniciar sesiï¿½n para administrar tu cuenta.');</script>";
 	header ("Location: ../");
    }
         ?>

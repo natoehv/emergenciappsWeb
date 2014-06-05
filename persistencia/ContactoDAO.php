@@ -30,8 +30,8 @@ class ContactoDAO{
 				$contacto = new Contacto();
 				$contacto->setNroUsuario($row['nro_telefono_usuario']);
 				$contacto->setNroContacto($row['nro_telefono_contacto']);
-				$contacto->setIdContacto($row['id_contacto']);;
-				$contacto->setFecha($row['fecha']);
+				$contacto->setIdContacto($row['ID_CONTACTO']);;
+				$contacto->setFecha($row['fecha_ingreso']);
 				$contacto->setFavorito($row['favorito']);
 				$contacto->setEstado($row['estado']);
 				$contacto->setNombre($row['nombre']);
