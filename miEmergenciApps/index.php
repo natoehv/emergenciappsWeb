@@ -145,7 +145,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
             </ol>
             <div class="alert alert-success alert-dismissable">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              Bienvenido a tu panel principal de EmergenciApps, si quieres cambiar tu configuraci�n de EmergenciApps puedes 
+              Bienvenido a tu panel principal de EmergenciApps, si quieres cambiar tu configuración de EmergenciApps puedes 
               acceder al panel de <a class="alert-link" href="javascript:cargaContenido('configuracion.php')">configuraciones</a> y modificar lo que
               estimes necesarios.
             </div>
@@ -424,8 +424,8 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
 
     <!-- Page Specific Plugins -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
-    <script src="js/morris/chart-data-morris.js"></script>
+    <!--script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script-->
+    <!--script src="js/morris/chart-data-morris.js"></script-->
     <script src="js/tablesorter/jquery.tablesorter.js"></script>
     <script src="js/tablesorter/jquery.tablesorter.pager.js"></script>
     <script src="js/contacto.js"></script>

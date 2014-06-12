@@ -73,7 +73,32 @@ var contacto = (function() {
         },
         agregarContacto: function(){
             console.log('Cargando nuevo contacto');
-            
+            nombre = $("#nombre").val();
+            codA = $("#codA").val();
+            validacion_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+            nroTelefono = $("#nroTelefono").val();
+            email = $("#email").val();
+            console.log('Ingresando contacto: ' + nombre);
+            var datos = 'nombre='+ nombre + '&codA=' + codA + '&nroTelefono=' + nroTelefono + '&email=' + email;
+            $.ajax({
+                type: "POST",
+                url: "agregaContacto.php",
+                data: datos,
+                success: function(response) {
+                    console.log("Ajax ejecutado correctamente (Agregar nuevo contacto)");
+                    //TODO mensaje contacto agregado
+                    contacto.cargaContenido('contactos.php');
+                    
+                   
+                },
+                error: function() {
+                    console.log("Error al ejecutar AJAX (Agregar nuevo contacto)");
+                    
+                    $('#page-wrapper').html('Consulta mal hecha');
+                                  
+                }
+            });
+            return false;
         }
       };
     })();

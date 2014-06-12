@@ -102,14 +102,14 @@
    <div class='container' style='display:none; cursor:default'>
 	   <legend>Nuevo Contacto</legend>
 	   <div class='well'>
-	   <form id='signup' class='form-horizontal' style='cursor:default;'>
+	   <form id='signup' class='form-horizontal' style='cursor:default;' onSubmit='return false;'>
 		   <legend style='color: white;'>Nuevo Contacto</legend>
 		   <div class='control-group'>
 			   <label class='control-label' style='color: white;'>Nombre</label>
 			   <div class='controls'>
 				   <div class='input-prepend'>
 					   <span class='add-on'><i class='icon-user'></i></span>
-					   <input type='text' class='input-xlarge' id='fname' name='fname' placeholder='Nombre'>
+					   <input type='text' class='input-xlarge' id='nombre' name='nombre' placeholder='Nombre'>
 				   </div>
 			   </div>
 		   </div>
@@ -117,10 +117,10 @@
 			   <label class='control-label' style='color: white;'>N�mero Telef�nico</label>
 				   	<div class='controls'>
 					   	<div class='input-prepend'>
-					   		<span class='add-on'><i class='icon-user'></i></span>
-              				<label class='control-label' style='color: white;'>+</label>
-              				<input maxlength='3' type='text' id='codA' name='codA' placeholder='569'>
-					   		<input maxlength='8'type='number' class='input-xlarge' id='lname' name='lname' placeholder='N� Telefonico'>
+                                                    <span class='add-on'><i class='icon-user'></i></span>
+                                                    <label class='control-label' style='color: white;'>+</label>
+                                                    <input maxlength='3' type='number' id='codA' name='codA' placeholder='569'>
+                                                    <input maxlength='8'type='number' class='input-xlarge' id='nroTelefono' name='nroTelefono' placeholder='N� Telefonico'>
 				   		</div>
 			   		</div>
 		   	</div>
@@ -138,7 +138,7 @@
 		   <div class='control-group'>
 		   <label class='control-label'></label>
 				<div class='controls'>
-			   		<button class='btn btn-success' >Agregar Contacto</button>
+			   		<button onClick='contacto.agregarContacto();' class='btn btn-success' >Agregar Contacto</button>
 			   	</div>
 		   
 		   </div>

@@ -57,5 +57,9 @@ include_once '../persistencia/ContactoDAO.php';
 			return $this->contacto->getNroContactos($nro);
 		}
 		
+                public function agregaNuevoContacto($idUsuario, $contacto){
+                    //retorna error o correcto
+                    return $this->contacto->ingresaNuevo($idUsuario, $contacto);
+                }
     }
 ?>
