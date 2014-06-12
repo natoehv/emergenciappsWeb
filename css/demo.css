@@ -1,7 +1,7 @@
 /* CSS reset */
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
-	margin:0;
-	padding:0;
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+	margin: 0;
+	padding: 0;
 }
 html,body {
 	margin:0;
@@ -35,7 +35,7 @@ header{
 /* General Demo Style */
 body{
 	font-family: Cambria, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
-	background:url(images/bgnoise_lg.png);
+	background:url(../images/bgnoise_lg.png);
 	font-weight: 400;
 	font-size: 15px;
 	color: #3a2127;
