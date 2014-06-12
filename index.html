@@ -372,9 +372,7 @@ $(function(){
 <script>google.load("prototype", "1.7");</script> 
 <script src="js/jquery-1.10.2.js"></script> 
 <script src="js/bootstrap.js"></script> 
-<script src="js/jquery.prettyPhoto.js"></script>; 
 <script src="js/emergenciAppsJS.js"></script>
-<script src ="scripts/jquery.js"></script>
 <script src = "scripts/lightbox.js"></script> 
 
 
@@ -387,18 +385,18 @@ $(function(){
         e.preventDefault();
         $("#sidebar-wrapper").toggleClass("active");
     });
-		$('#menu-toggle').mouseenter(function() {
-			$("#sidebar-wrapper").toggleClass("active");
-		});
-		
-		$('#sidebar-wrapper').mouseleave(function(){
-			$("#sidebar-wrapper").toggleClass("active");
-		});
-		
-		$("#menu-toggle").click(function(e) {
-			e.preventDefault();
-			$("#sidebar-wrapper").toggleClass("active");
-		});
+    $('#menu-toggle').mouseenter(function() {
+            $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    $('#sidebar-wrapper').mouseleave(function(){
+            $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+    });
     </script> 
 <script>
     $(function() {
