@@ -1,330 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>EmergenciAPPS</title>
 
-    <title>EmergenciAPPS</title>
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.css" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Add custom CSS here -->
-    <link href="css/stylish-portfolio.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/style5.css" rel="stylesheet">
-	<link href="css/common.css" rel="stylesheet">
-	<link href="css/normalize.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	
-	
+<!-- Add custom CSS here -->
+<script type='text/javascript' src='scripts/jquery.js'></script>
+<script type='text/javascript' src='scripts/lightbox.js'></script>
+<link type='text/css' href='css/lightbox.css' rel='stylesheet'/>
+<link type='text/css' href='css/sample_lightbox_layout.css' rel='stylesheet'/>
+<link href="css/stylish-portfolio.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/style5.css" rel="stylesheet">
+<link href="css/common.css" rel="stylesheet">
+<link href="css/normalize.css" rel="stylesheet">
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<style type="text/css">
+.lbGallery {
+	/*gallery container settings*/
+	/* [disabled]background-color: #cccccc; */
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	width: 540px;
+	height: auto;
+	text-align: left;
+	margin-left: 455px;
+		}
+		.lbGallery ul { list-style: none; margin:0;padding:0; }
+		.lbGallery ul li { display: inline;margin:0;padding:0; }
+		.lbGallery ul li a{text-decoration:none;}
+			
+		.lbGallery ul li a img {
+	/*border color, width and margin for the images*/
+	border-color: #3e3e3e;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+			margin-bottom:5px:
+; 	border-width: 10px;
+			}
+			
+		.lbGallery ul li a:hover img {	
+			/*background color on hover*/
+			border-color: #ffffff;
+			border-left-width: 10px;
+			border-top-width: 10px;
+			border-right-width: 10px;
+			border-bottom-width: 20px;
+		}
+			
+		#lightbox-container-image-box {
+			border-top: 0px none #ffffff;
+			border-right: 0px none #ffffff;
+			border-bottom: 0px none #ffffff;
+			border-left: 0px none #ffffff;
+			}
+			
+		#lightbox-container-image-data-box { 
+			border-top: 0px;
+			border-right: 0px none #ffffff;
+			border-bottom: 0px none #ffffff;
+			border-left: 0px none #ffffff;
+			}
+</style>
 </head>
 
 <body>
 
-    <!-- Side Menu -->
-    <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-            <li class="sidebar-brand"><a href="#">Instalar...</a>
-            </li>
-			<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Iniciar Sesion <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-				<form action="logica/recibeLogin.php" method="post" class="form-inline">
-				  <div class="form-group">
-					<label class="sr-only" for="ejemplo_email_2">Email</label>
-					<input type="email" class="form-control" id="email" name="email"
+<!-- Side Menu --> 
+<a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
+<div id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+    <li class="sidebar-brand"><a href="#">Instalar...</a> </li>
+    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i>Iniciar Sesion <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <form action="logica/recibeLogin.php" method="post" class="form-inline">
+          <div class="form-group">
+            <label class="sr-only" for="ejemplo_email_2">Email</label>
+            <input type="email" class="form-control" id="email" name="email"
 						   placeholder="Introduce tu email">
-				  </div>
-				  <div class="form-group">
-					<label class="sr-only" for="ejemplo_password_2">Contraseña</label>
-					<input type="password" class="form-control" id="password" name="password"
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="ejemplo_password_2">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password"
 						   placeholder="Contraseña">
-				  </div>
-				  <div class="checkbox">
-					<label>
-					  <input type="checkbox"> No cerrar sesión
-					</label>
-				  </div>
-				  <button class="btn btn-default">Entrar</button>
-				</form>
-              </ul>
-            </li>
-				
-            <li><a href="#about">Acerca de Nosotros</a>
-            </li>
-            <li><a href="#services">Servicios</a>
-            </li>
-            <li><a href="#portfolio">Capturas</a>
-            </li>
-            <li><a href="#contact">Contactanos</a>
-            </li>
-        </ul>
-    </div>
-    <!-- /Side Menu -->
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox">
+              No cerrar sesión </label>
+          </div>
+          <button class="btn btn-default">Entrar</button>
+        </form>
+      </ul>
+    </li>
+    <li><a href="#about">Acerca de Nosotros</a> </li>
+    <li><a href="#services">Servicios</a> </li>
+    <li><a href="#portfolio">Capturas</a> </li>
+    <li><a href="#contact">Contactanos</a> </li>
+  </ul>
+</div>
+<!-- /Side Menu --> 
 
-    <!-- Full Page Image Header Area -->
-    <div id="top" class="header">
-      <div class="vert-text">
-        <h1 id="start">Comienza a usar EmergenciAPPS</h1>
-            <h3>
-                <em>Toda</em> la ayuda,
-                <em>en la palma</em> de tu mano</h3>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
-            <p><a href="https://play.google.com/store"><img src="img/disponible_google_play.png" width="184" height="64"  alt=""/></a></p>
+<!-- Full Page Image Header Area -->
+<div id="top" class="header">
+  <div class="vert-text">
+    <h1 id="start">Comienza a usar EmergenciAPPS</h1>
+    <h3> <em>Toda</em> la ayuda, <em>en la palma</em> de tu mano</h3>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><a href="https://play.google.com/store"><img src="img/disponible_google_play.png" width="184" height="64"  alt=""/></a></p>
+  </div>
+</div>
+<!-- /Full Page Image Header Area --> 
+
+<!-- Intro -->
+<div id="about" class="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <h2>Toda la información sobre los servicios de rescate en la palma de tu mano</h2>
+        <h4>¡Que esperas... Descarga ahora la aplicación directo a tu móvil!</h4>
       </div>
     </div>
-    <!-- /Full Page Image Header Area -->
+  </div>
+</div>
+<!-- /Intro --> 
 
-    <!-- Intro -->
-    <div id="about" class="intro">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center">
-                    <h2>Toda la información sobre los servicios de rescate en la palma de tu mano</h2>
-                    <h4>¡Que esperas... Descarga ahora la aplicación directo a tu móvil!</h4>
-                   
-                </div>
-            </div>
-        </div>
+<!-- Services -->
+<div id="services" class="services">
+  <div class="container">
+    <div class="row">
+      <div>
+        <h2 align="center">Te ofrecemos</h2>
+        <hr>
+      </div>
     </div>
-    <!-- /Intro -->
+    <div class="row">
+      <div class="col-md-2 col-md-offset-3 text-center">
+        <div  class="service-item"> <a href="#ambulancia" ><img src="icons/medico.png"  style="width:150px;" /></a>
+          <h4 align="center">Ambulancia</h4>
+          <p>Acceso a los distintos números y ubicación donde se encuentre el servicio de ambulacias de tu localidad.</p>
+        </div>
+      </div>
+      <div class="ch-item ch-img-2"> </div>
+      <div class="col-md-2 text-center">
+        <div class="service-item"> <a href="#bomberos" ><img src="icons/bombero.png"  style="width:150px;" /></a>
+          <h4 align="center">Bomberos</h4>
+          <p>Accede a la los números y ubicacion de donde se encuentre el cuerpo de bombero de tu localidad y el más cercano...</p>
+        </div>
+      </div>
+      <div class="col-md-2 text-center">
+        <div class="service-item"> <a href="#carabineros" ><img src="icons/carabinero.png"  style="width:150px;" /></a>
+          <h4 align="center">Carabinero</h4>
+          <p>Accede a numeros y ubicación de donde se encuentre la comisaria de Carabineros de tu localidad y mas cercana.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Services --> 
 
-    <!-- Services -->
-    <div id="services" class="services">
-        <div class="container">
-            <div class="row">
-                <div>
-                    <h2 align="center">Te ofrecemos</h2>
-                    <hr>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2 col-md-offset-3 text-center">
-                    <div  class="service-item">
-                        <a href="#ambulancia" ><img src="icons/medico.png"  style="width:150px;" /></a>
-                        <h4 align="center">Ambulancia</h4>
-                        <p>Acceso a los distintos números y ubicación donde se encuentre el servicio de ambulacias de tu localidad.</p>
-                    </div>
-                </div>
-				 <div class="ch-item ch-img-2">
-        </div>
-                <div class="col-md-2 text-center">
-                    <div class="service-item">
-                        <a href="#bomberos" ><img src="icons/bombero.png"  style="width:150px;" /></a>
-                        <h4 align="center">Bomberos</h4>
-                        <p>Accede a la los números y ubicacion de donde se encuentre el cuerpo de bombero de tu localidad y el más cercano...</p>
-                    </div>
-                </div>
-                <div class="col-md-2 text-center">
-                    <div class="service-item">
-                      <a href="#carabineros" ><img src="icons/carabinero.png"  style="width:150px;" /></a>
-                      <h4 align="center">Carabinero</h4>
-                        <p>Accede a numeros y ubicación de donde se encuentre la comisaria de Carabineros de tu localidad y mas cercana.</p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    <!-- /Services -->
+<!-- Callout -->
+<div id="ambulancia" class="callout-ambulancia">
+  <div class="vert-text">
+    <h1>Ambulancia</h1>
+    <h3>Número y ubicación de las distintas Ambulancias disponibles cercanas a tu ubicación</h3>
+  </div>
+</div>
+<!-- /Callout --> 
 
-    <!-- Callout -->
-    <div id="ambulancia" class="callout-ambulancia">
-        <div class="vert-text">
-            <h1>Ambulancia</h1>
-            <h3>Número y ubicación de las distintas Ambulancias disponibles cercanas a tu ubicación</h3>
-        </div>
+<!-- Portfolio -->
+<div id="portfolio" class="portfolio">
+  
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 text-center">
+        <h2>Galería de imagenes</h2>
+        <hr>
+      </div>
+		<div id="gallery" class="lbGallery">
+			<ul>
+				<li>
+					<a href="images/portada.jpg" title=""><img src="images/portada.jpg" width="72" height="100" alt="Portada" /></a>
+				</li>
+				<li>
+					<a href="images/menu.jpg" title=""><img src="images/menu.jpg" width="72" height="100" alt="Menú" /></a>
+				</li>
+				<li>
+					<a href="images/ambulancia.jpg" title=""><img src="images/ambulancia.jpg" width="72" height="100" alt="" /></a>
+				</li>
+				<li>
+					<a href="images/bombero.jpg" title=""><img src="images/bombero.jpg" width="72" height="100" alt="" /></a>
+				</li>
+				<li>
+					<a href="images/carabinero.jpg" title=""><img src="images/carabinero.jpg" width="72" height="100" alt="" /></a>
+				</li>
+			</ul>
+		
     </div>
-    <!-- /Callout -->
+  </div>
+    </div>
+ 
+<!-- /Portfolio --> 
+<!-- Callout Bomberos -->
+<div id="bomberos" class="callout-bombero">
+  <div class="vert-text">
+    <h1>Bomberos de Chile</h1>
+    <h3>Número y ubicación de los distintos cuarteles de Bomberos disponibles cercanos a tu ubicación</h3>
+  </div>
+</div>
+<!-- /Callout --> 
 
-    <!-- Portfolio -->
-    <div id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4 text-center">
-                    <h2>Capturas</h2>
-                    <hr>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-2 text-center">
-                    <div class="portfolio-item">
-                        <a href="#">
-                            <img class="img-portfolio img-responsive" src="img/ambulancia.jpg">
-                        </a>
-                        <h4>Cityscape</h4>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="portfolio-item">
-                        <a href="#">
-                            <img class="img-portfolio img-responsive" src="img/portada.jpg"/>
-                        </a>
-                        <h4>Is That On Fire?</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-2 text-center">
-                    <div class="portfolio-item">
-                        <a href="#">
-                            <img class="img-portfolio img-responsive" src="img/menu.jpg"/>
-                        </a>
-                        <h4>Stop Sign</h4>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="portfolio-item">
-                        <a href="#">
-                            <img class="img-portfolio img-responsive" src="img/ambulancia.jpg">
-                        </a>
-                        <h4>Narrow Focus</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--Portfolio -->
+<div id="portfolio" class="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 text-center">
+        <h2>Capturas</h2>
+        <hr>
+      </div>
     </div>
-    <!-- /Portfolio -->
-	<!-- Callout Bomberos -->
-    <div id="bomberos" class="callout-bombero">
-        <div class="vert-text">
-            <h1>Bomberos de Chile</h1>
-            <h3>Número y ubicación de los distintos cuarteles de Bomberos disponibles cercanos a tu ubicación</h3>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2 text-center">
+        <div class="portfolio-item"> <a href="#"> <img class="img-portfolio img-responsive" src="img/bombero.jpg"/> </a>
+          <h4>Bomberos</h4>
         </div>
-    </div>
-    <!-- /Callout -->
-    
-    <!--Portfolio -->
-    <div id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4 text-center">
-                    <h2>Capturas</h2>
-                    <hr>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-2 text-center">
-                    <div class="portfolio-item">
-                        <a href="#">
-                            <img class="img-portfolio img-responsive" src="img/bombero.jpg"/>
-                        </a>
-                        <h4>Bomberos</h4>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="portfolio-item">
-                        <a href="#">
-                            <img class="img-portfolio img-responsive" src="img/menu.jpg"/>
-                        </a>
-                        <h4>Is That On Fire?</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-2 text-center">
-                    <div class="portfolio-item">
-                        <a href="#">
-                            <img class="img-portfolio img-responsive" src="img/portada.jpg"/>
-                        </a>
-                        <h4>Stop Sign</h4>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="portfolio-item">
-                        <a href="#">
-                            <img class="img-portfolio img-responsive" src="img/bombero.jpg"/>
-                        </a>
-                        <h4>Narrow Focus</h4>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="portfolio-item"> <a href="#"> <img class="img-portfolio img-responsive" src="img/menu.jpg"/> </a>
+          <h4>Is That On Fire?</h4>
         </div>
+      </div>
     </div>
-    
-	<!-- /Portfolio Bomberos -->
-	
-	<!-- Callout Carabineros -->
-    <div id="carabineros" class="callout-carabineros">
-        <div class="vert-text">
-            <h1>Carabineros de Chile</h1>
-            <h3>Número y ubicación de las distintas comisarias de Carabineros disponibles cercanos a tu ubicación</h3>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2 text-center">
+        <div class="portfolio-item"> <a href="#"> <img class="img-portfolio img-responsive" src="img/portada.jpg"/> </a>
+          <h4>Stop Sign</h4>
         </div>
-    </div>
-    <!-- /Callout -->
-	
-     <!--Portfolio -->
-    <div id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4 text-center">
-                    <h2>Capturas</h2>
-                    <hr>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-2 text-center">
-                    <div class="portfolio-item">
-                        <a href="#">
-                            <img class="img-portfolio img-responsive" src="img/carabinero.jpg"/>
-                        </a>
-                        <h4>Carabineros</h4>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="portfolio-item">
-                        <a href="#">
-                           <img class="img-portfolio img-responsive" src="img/menu.jpg"/>
-                        </a>
-                        <h4>Is That On Fire?</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-2 text-center">
-                    <div class="portfolio-item">
-                        <a href="#">
-                           <img class="img-portfolio img-responsive" src="img/portada.jpg"/>                </a>
-                        <h4>Stop Sign</h4>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="portfolio-item">
-                        <a href="#">
-                            <img class="img-portfolio img-responsive" src="img/carabinero.jpg"/>
-                        </a>
-                        <h4>Narrow Focus</h4>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="portfolio-item"> <a href="#"> <img class="img-portfolio img-responsive" src="img/bombero.jpg"/> </a>
+          <h4>Narrow Focus</h4>
         </div>
+      </div>
     </div>
-    
-	<!-- /Portfolio Carabineros -->
-    
-    
-    <!-- Call to Action -->
-    <div class="call-to-action">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center">
-                    <h3>Más seguridad en tu vida cotidiana, te esperamos...</h3>
-                    <a href="#" class="btn btn-lg btn-default">¡Instalar!</a>
-                    <a href="#" class="btn btn-lg btn-primary">Acerca de nosotros</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Call to Action -->
+  </div>
+</div>
 
-    <!-- Map 
+<!-- /Portfolio Bomberos --> 
+
+<!-- Callout Carabineros -->
+<div id="carabineros" class="callout-carabineros">
+  <div class="vert-text">
+    <h1>Carabineros de Chile</h1>
+    <h3>Número y ubicación de las distintas comisarias de Carabineros disponibles cercanos a tu ubicación</h3>
+  </div>
+</div>
+<!-- /Callout --> 
+
+<!--Portfolio -->
+<div id="portfolio" class="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 text-center">
+        <h2>Capturas</h2>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2 text-center">
+        <div class="portfolio-item"> <a href="#"> <img class="img-portfolio img-responsive" src="img/carabinero.jpg"/> </a>
+          <h4>Carabineros</h4>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="portfolio-item"> <a href="#"> <img class="img-portfolio img-responsive" src="img/menu.jpg"/> </a>
+          <h4>Is That On Fire?</h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2 text-center">
+        <div class="portfolio-item"> <a href="#"> <img class="img-portfolio img-responsive" src="img/portada.jpg"/> </a>
+          <h4>Stop Sign</h4>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="portfolio-item"> <a href="#"> <img class="img-portfolio img-responsive" src="img/carabinero.jpg"/> </a>
+          <h4>Narrow Focus</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- /Portfolio Carabineros --> 
+
+<!-- Call to Action -->
+<div class="call-to-action">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <h3>Más seguridad en tu vida cotidiana, te esperamos...</h3>
+        <a href="#" class="btn btn-lg btn-default">¡Instalar!</a> <a href="#" class="btn btn-lg btn-primary">Acerca de nosotros</a> </div>
+    </div>
+  </div>
+</div>
+<!-- /Call to Action --> 
+
+<!-- Map 
     <div id="contact" class="map">
         <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
         <br />
@@ -333,44 +327,61 @@
         </small>
         </iframe>
     </div>
-    <!-- /Map -->
+    <!-- /Map --> 
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center">
-                    <ul class="list-inline">
-                        <li><i class="fa fa-facebook fa-3x"></i>
-                        </li>
-                        <li><i class="fa fa-twitter fa-3x"></i>
-                        </li>
-                        <li><i class="fa fa-dribbble fa-3x"></i>
-                        </li>
-                    </ul>
-                    <div class="top-scroll">
-                        <a href="#top"><i class="fa fa-circle-arrow-up scroll fa-4x"></i></a>
-                    </div>
-                   
-                    <p>Copyright &copy; Company 2013</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- /Footer -->
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <ul class="list-inline">
+          <li><i class="fa fa-facebook fa-3x"></i> </li>
+          <li><i class="fa fa-twitter fa-3x"></i> </li>
+          <li><i class="fa fa-dribbble fa-3x"></i> </li>
+        </ul>
+        <div class="top-scroll"> <a href="#top"><i class="fa fa-circle-arrow-up scroll fa-4x"></i></a> </div>
+        <p>Copyright &copy; Company 2013</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /Footer --> 
 
-    
-    <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
-    <!-- JavaScript -->
-	<script src="http://www.google.com/jsapi"></script>  
-	<script>google.load("prototype", "1.7");</script>
-    <script src="js/jquery-1.10.2.js"></script>
-	<script src="js/bootstrap.js"></script>
-	<script src="js/emergenciAppsJS.js"></script>
-	
-    
 
-<!-- DESLIZAR --->
+<script type="text/javascript">
+$(function(){
+			$('#gallery a').lightBox({ 
+				imageLoading:			'images/lightbox/lightbox-ico-loading.gif',		// (string) Path and the name of the loading icon
+				imageBtnPrev:			'images/lightbox/lightbox-btn-prev.gif',			// (string) Path and the name of the prev button image
+				imageBtnNext:			'images/lightbox/lightbox-btn-next.gif',			// (string) Path and the name of the next button image
+				imageBtnClose:			'images/lightbox/lightbox-btn-close.gif',		// (string) Path and the name of the close btn
+				imageBlank:				'images/lightbox/lightbox-blank.gif',			// (string) Path and the name of a blank image (one pixel)
+				fixedNavigation:		false,		// (boolean) Boolean that informs if the navigation (next and prev button) will be fixed or not in the interface.
+				containerResizeSpeed:	400,			 // Specify the resize duration of container image. These number are miliseconds. 400 is default.
+				overlayBgColor: 		"#999999",		// (string) Background color to overlay; inform a hexadecimal value like: #RRGGBB. Where RR, GG, and BB are the hexadecimal values for the red, green, and blue values of the color.
+				overlayOpacity:			.6,		// (integer) Opacity value to overlay; inform: 0.X. Where X are number from 0 to 9
+				txtImage:				'Image',				//Default text of image
+				txtOf:					'of'
+			});
+		});
+</script>
+
+<!-- Custom JavaScript for the Side Menu and Smooth Scrolling --> 
+<!-- JavaScript --> 
+<script src="http://www.google.com/jsapi"></script> 
+<script>google.load("prototype", "1.7");</script> 
+<script src="js/jquery-1.10.2.js"></script> 
+<script src="js/bootstrap.js"></script> 
+<script src="js/jquery.prettyPhoto.js"></script>; 
+<script src="js/emergenciAppsJS.js"></script>
+<script src ="scripts/jquery.js"></script>
+<script src = "scripts/lightbox.js"></script> 
+
+
+<!-- Galeria --> 
+
+
+<!-- DESLIZAR ---> 
 <script>
     $("#menu-close").click(function(e) {
         e.preventDefault();
@@ -388,8 +399,8 @@
 			e.preventDefault();
 			$("#sidebar-wrapper").toggleClass("active");
 		});
-    </script>
-    <script>
+    </script> 
+<script>
     $(function() {
         $('a[href*=#]:not([href=#])').click(function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
@@ -406,7 +417,5 @@
         });
     });
     </script>
-
 </body>
-
 </html>
