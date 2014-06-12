@@ -48,7 +48,7 @@ class Contacto{
 		$this->fecha = $fecha;
 	}
 	public function getNombre() {
-		return $this->nro_telefono_usuario;
+		return $this->nombre;
 	}
 	public function setNombre($nombre) {
 		$this->nombre = $nombre;

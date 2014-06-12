@@ -53,9 +53,9 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav side-nav">
-            <li class="active"><a href="index.php"><i class="fa fa-dashboard"></i> Mis Datos</a></li>
-            <li><a href="javascript:eventos.cargaContenido('contactos.php');" id="contactos"><i class="fa fa-bar-chart-o"></i> Contactos</a></li>
+          <ul class="nav navbar-nav side-nav" id="nav_izq">
+            <li class="active" id="li_inicio"><a href="index.php"><i class="fa fa-dashboard"></i> Mis Datos</a></li>
+            <li id="li_contacto"><a href="javascript:contacto.cargaContenido('contactos.php');" id="contactos"><i class="fa fa-bar-chart-o"></i> Contactos</a></li>
             <li><a href="tables.html"><i class="fa fa-table"></i> Tables</a></li>
             <li><a href="forms.html"><i class="fa fa-edit"></i> Forms</a></li>
             <li><a href="typography.html"><i class="fa fa-font"></i> Typography</a></li>
@@ -145,7 +145,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
             </ol>
             <div class="alert alert-success alert-dismissable">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              Bienvenido a tu panel principal de EmergenciApps, si quieres cambiar tu configuraci�n de EmergenciApps puedes 
+              Bienvenido a tu panel principal de EmergenciApps, si quieres cambiar tu configuración de EmergenciApps puedes 
               acceder al panel de <a class="alert-link" href="javascript:cargaContenido('configuracion.php')">configuraciones</a> y modificar lo que
               estimes necesarios.
             </div>
@@ -166,7 +166,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
                   </div>
                 </div>
               </div>
-              <a href="javascript:cargaContenido('contactos.php')">
+              <a href="javascript:contacto.cargaContenido('contactos.php')">
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
@@ -424,11 +424,11 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
 
     <!-- Page Specific Plugins -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
-    <script src="js/morris/chart-data-morris.js"></script>
+    <!--script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script-->
+    <!--script src="js/morris/chart-data-morris.js"></script-->
     <script src="js/tablesorter/jquery.tablesorter.js"></script>
     <script src="js/tablesorter/jquery.tablesorter.pager.js"></script>
-    <script src="js/eventos.js"></script>
+    <script src="js/contacto.js"></script>
     
 
   </body>

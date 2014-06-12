@@ -7,7 +7,7 @@ $(document).on('ready',function(){
     */
 
 });
-var eventos = (function() {
+var contacto = (function() {
       console.log('Inicializa eventos');
       var variablePublica = "podria iniciar un widget aqui";
       //configuracion para blockUI
@@ -28,7 +28,9 @@ var eventos = (function() {
          */
         cargaContenido: function(tabla) {
             if(tabla=="contactos.php"){
-		eventos.cargaContenedorContactos(tabla);
+                $('#nav_izq li').removeClass('active');
+                $('#li_contacto').addClass('active');
+		contacto.cargaContenedorContactos(tabla);
             }
         },
         
@@ -46,7 +48,9 @@ var eventos = (function() {
                             });
                             //Eventos para tabla 
                             $('#tbody input').click(function(){
-                                alert("ha seleccionado checkbox: ");
+                                var checkID = $(this).attr("id");
+                                alert("ha seleccionado checkbox: "+checkID);
+                                $('#btnGuardarCambios').removeClass('disabled');
                             });
                         /*
                          * Inicializa validaci�n formulario nuevo contacto
@@ -67,6 +71,35 @@ var eventos = (function() {
         vaciaTabla: function(tabla) {
           console.log('tabla ocultada');
         },
+        agregarContacto: function(){
+            console.log('Cargando nuevo contacto');
+            nombre = $("#nombre").val();
+            codA = $("#codA").val();
+            validacion_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+            nroTelefono = $("#nroTelefono").val();
+            email = $("#email").val();
+            console.log('Ingresando contacto: ' + nombre);
+            var datos = 'nombre='+ nombre + '&codA=' + codA + '&nroTelefono=' + nroTelefono + '&email=' + email;
+            $.ajax({
+                type: "POST",
+                url: "agregaContacto.php",
+                data: datos,
+                success: function(response) {
+                    console.log("Ajax ejecutado correctamente (Agregar nuevo contacto)");
+                    //TODO mensaje contacto agregado
+                    contacto.cargaContenido('contactos.php');
+                    
+                   
+                },
+                error: function() {
+                    console.log("Error al ejecutar AJAX (Agregar nuevo contacto)");
+                    
+                    $('#page-wrapper').html('Consulta mal hecha');
+                                  
+                }
+            });
+            return false;
+        }
       };
     })();
 
@@ -77,7 +110,7 @@ function mostrarFormulario(){
                         onOverlayClick: $.unblockUI,
 		 	css: { 
 		                width: '350px', 
-		                top: '10px', 
+		                top: '50px', 
 		                left: '', 
 		                right: '10px', 
 		                border: 'none', 

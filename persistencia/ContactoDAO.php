@@ -13,11 +13,13 @@ class ContactoDAO{
     
     public function ingresarContactoDAO($contacto){
     	//TODO falta arreglar
+        $resultado="Correcto";
         $link=$this->cone->obtenerConexion();
-        $laConsulta="INSERT into contacto (nro_telefono_contacto, nro, nro_telefono ) VALUES 
-            (".$contacto->getCorreo().",'".$contacto->getContrasena()."','".$contacto->getNroTelefono()."');";
-        mysql_query($laConsulta,$link)or die("<script>alert('No fue posible insertar contacto en base de datos')</script>");
+        $laConsulta="INSERT into contacto (nro_telefono_contacto, nro_telefono_usuario, fecha_ingreso, estado, favorito, correo, nombre ) VALUES 
+            (".$contacto->getNroContacto().",'".$contacto->getNroUsuario()."','sysdate()','0','0','".$contacto->getCorreo()."','".$contacto->getNombre()."');";
+        mysql_query($laConsulta,$link)or die($resultado = "error");
         mysql_close($link);
+        return $resultado;
     }
 	 public function getContactosConNro($nro){
 		$link=$this->cone->obtenerConexion();
@@ -30,8 +32,8 @@ class ContactoDAO{
 				$contacto = new Contacto();
 				$contacto->setNroUsuario($row['nro_telefono_usuario']);
 				$contacto->setNroContacto($row['nro_telefono_contacto']);
-				$contacto->setIdContacto($row['id_contacto']);;
-				$contacto->setFecha($row['fecha']);
+				$contacto->setIdContacto($row['ID_CONTACTO']);;
+				$contacto->setFecha($row['fecha_ingreso']);
 				$contacto->setFavorito($row['favorito']);
 				$contacto->setEstado($row['estado']);
 				$contacto->setNombre($row['nombre']);
