@@ -85,9 +85,10 @@ var contacto = (function() {
                 url: "agregaContacto.php",
                 data: datos,
                 success: function(response) {
-                    console.log("Ajax ejecutado correctamente (Agregar nuevo contacto)");
+                    console.log("Ajax ejecutado correctamente (Agregar nuevo contacto "+response +")");
                     //TODO mensaje contacto agregado
-                    contacto.cargaContenido('contactos.php');
+                    
+                    //contacto.cargaContenido('contactos.php');
                     
                    
                 },
