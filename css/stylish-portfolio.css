@@ -23,6 +23,7 @@ body {
 	background-color: rgba(100,100,100,.8);
 }
 .vert-text h1:first-of-type, h3{
+	/* [disabled]background-color: #858585; */
 
 }
 
@@ -129,11 +130,11 @@ body {
 /* Intro */
 
 .intro {
-  padding: 50px 0;
-  background:url(../img/portada.jpg);
-  background-size:cover;
-  background-position:60 px 100px;
-  background-repeat: no-repeat;
+	padding: 50px 0;
+	background-size: cover;
+	background-position: 60 px 100px;
+	background-repeat: no-repeat;
+	background-color: #000033;
   
  
 }
