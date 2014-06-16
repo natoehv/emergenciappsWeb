@@ -22,6 +22,7 @@
 <link href="css/common.css" rel="stylesheet">
 <link href="css/normalize.css" rel="stylesheet">
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="css/formulario.css" rel="stylesheet" type="text/css" media="screen" />
 <style type="text/css">
 .lbGallery {
 	/*gallery container settings*/
@@ -30,10 +31,10 @@
 	padding-top: 20px;
 	padding-right: 20px;
 	padding-bottom: 20px;
-	width: 540px;
+	width: auto;
 	height: auto;
 	text-align: left;
-	margin-left: 455px;
+	margin-left: 0px;
 		}
 		.lbGallery ul { list-style: none; margin:0;padding:0; }
 		.lbGallery ul li { display: inline;margin:0;padding:0; }
@@ -302,9 +303,24 @@
 <div class="call-to-action">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3 text-center">
-        <h3>Más seguridad en tu vida cotidiana, te esperamos...</h3>
-        <a href="#" class="btn btn-lg btn-default">¡Instalar!</a> <a href="#" class="btn btn-lg btn-primary">Acerca de nosotros</a> </div>
+      <div id="contact">
+	<h1>Contactanos</h1>
+	<form action="#" method="post">
+		<fieldset>
+			<label for="name">Nombre:</label>
+			<input type="text" id="name" placeholder="Ingresa tu nombre" />
+			
+			<label for="email">Email:</label>
+			<input type="email" id="email" placeholder="Ingresa tu e-mail" />
+			
+			<label for="message">Mensaje:</label>
+			<textarea id="message" placeholder="Ingresa tu mensaje"></textarea>
+			
+			<input type="submit" value="Enviar Mensaje" />
+			
+		</fieldset>
+	</form>
+</div>
     </div>
   </div>
 </div>

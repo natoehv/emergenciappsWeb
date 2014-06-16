@@ -7,9 +7,11 @@ body {
 }
 
 .vert-text {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	min-height: 0px;
+	max-width: 100%;
 }
 
 .vert-text h1{
