@@ -13,7 +13,7 @@ $contacto->setNombre($nombre);
 $contacto->setNroContacto($codA ."".$nroContacto);
 
 $control = Sistema::getInstancia();
-
+echo $nombre;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
