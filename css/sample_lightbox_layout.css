@@ -20,5 +20,8 @@
 		border-width: 5px 5px 20px;
 		color: #fff;
 	}
-	.lbGallery ul a:hover { color: #fff; }
+	.lbGallery ul a:hover {
+	color: #fff;
+	width: 20%;
+}
 	
