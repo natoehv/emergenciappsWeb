@@ -8,7 +8,7 @@ $(document).on('ready',function(){
 
 });
 var contacto = (function() {
-      console.log('Inicializa eventos');
+      console.log('Inicializa eventos contacto');
       var variablePublica = "podria iniciar un widget aqui";
       //configuracion para blockUI
       var configuracion = ({css: {border: 'none', 

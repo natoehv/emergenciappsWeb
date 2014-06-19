@@ -56,7 +56,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
           <ul class="nav navbar-nav side-nav" id="nav_izq">
             <li class="active" id="li_inicio"><a href="index.php"><i class="fa fa-dashboard"></i> Mis Datos</a></li>
             <li id="li_contacto"><a href="javascript:contacto.cargaContenido('contactos.php');" id="contactos"><i class="fa fa-bar-chart-o"></i> Contactos</a></li>
-            <li><a href="tables.html"><i class="fa fa-table"></i> Configuración</a></li>
+            <li id='li_configuracion'><a href="javascript:configuracion.cargaContenido();" ><i class="fa fa-table"></i> Configuración</a></li>
             <li><a href="forms.html"><i class="fa fa-edit"></i> Ayuda</a></li>
           </ul>
 
@@ -133,7 +133,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
             <div class="alert alert-success alert-dismissable">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
               Bienvenido a tu panel principal de EmergenciApps, si quieres cambiar tu configuración de EmergenciApps puedes 
-              acceder al panel de <a class="alert-link" href="javascript:cargaContenido('configuracion.php')">configuraciones</a> y modificar lo que
+              acceder al panel de <a class="alert-link" href="javascript:configuracion.cargaContenido()">configuraciones</a> y modificar lo que
               estimes necesarios.
             </div>
           </div>
@@ -149,7 +149,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
                   </div>
                   <div class="col-xs-6 text-right">
                     <p class="announcement-heading"><?php echo $nro;?></p>
-                    <p class="announcement-text">N� de Contactos</p>
+                    <p class="announcement-text">N° de Contactos</p>
                   </div>
                 </div>
               </div>
@@ -413,9 +413,11 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <!--script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script-->
     <!--script src="js/morris/chart-data-morris.js"></script-->
+    <script src="js/contacto.js"></script>
+    <script src="js/configuracion.js"></script>
     <script src="js/tablesorter/jquery.tablesorter.js"></script>
     <script src="js/tablesorter/jquery.tablesorter.pager.js"></script>
-    <script src="js/contacto.js"></script>
+    
     
 
   </body>
