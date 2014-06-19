@@ -413,10 +413,11 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <!--script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script-->
     <!--script src="js/morris/chart-data-morris.js"></script-->
+    <script src="js/dataTable/jquery.dataTables.min.js"></script>
+    <script src="js/dataTable/dataTables.bootstrap.min.js"></script>
     <script src="js/contacto.js"></script>
     <script src="js/configuracion.js"></script>
-    <script src="js/tablesorter/jquery.tablesorter.js"></script>
-    <script src="js/tablesorter/jquery.tablesorter.pager.js"></script>
+    
     
     
 

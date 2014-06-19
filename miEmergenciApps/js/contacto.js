@@ -41,11 +41,20 @@ var contacto = (function() {
 			/*
 			 * configura tabla para ordenar luego de cargar el recurso
 			 */
-                            $('#tabla_contactos')
-                            .tablesorter({
-                                widthFixed: true,
-                                widgets: ['zebra']
-                            });
+                            $('#tabla_contactos').dataTable(
+                  {
+		"sDom": "<'row'<'col-lg-6'l><'col-lg-6'f>r>t<'row'<'col-lg-12'i><'col-lg-12 center'p>>",
+		"sPaginationType": "bootstrap",
+		"oLanguage": {
+			"sLengthMenu": "_MENU_ Resultados por página"
+		}
+	}
+                  
+                  );
+//                            .tablesorter({
+//                                widthFixed: true,
+//                                widgets: ['zebra']
+//                            });
                             //Eventos para tabla 
                             $('#tbody input').click(function(){
                                 var checkID = $(this).attr("id");

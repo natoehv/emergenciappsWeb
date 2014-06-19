@@ -33,12 +33,12 @@
               <table id="tabla_contactos" class='table table-bordered table-hover table-striped tablesorter'>
                 <thead>
                   <tr>
-                    <th class="header">N� Tel�fono <i class='fa fa-sort'></i></th>
+                    <th class="header">N° Teléfono <i class='fa fa-sort'></i></th>
                     <th class="header">Nombre <i class='fa fa-sort'></i></th>
                     <th class="header">Apellidos <i class='fa fa-sort'></i></th>
                     <th class="header">Fecha Agregado <i class='fa fa-sort'></i></th>
    					<th class="header">Favorito</i></h>
-                    <th class="header">Acci�n</th>
+                    <th class="header">Acción</th>
                   </tr>
                 </thead>
                 <tbody id="tbody">
@@ -73,21 +73,6 @@
    echo "
                 </tbody>
               </table>
-              <div id='pager' class='pager'>
-					<form>
-						<img src='../icons/first.png' class='first'/>
-						<img src='../icons/prev.png' class='prev'/>
-						<input type='text' class='pagedisplay'/>
-						<img src='../icons/next.png' class='next'/>
-						<img src='../icons/last.png' class='last'/>
-						<select class='pagesize'>
-							<option selected='selected'  value='10'>1</option>
-							<option value='20'>20</option>
-							<option value='30'>30</option>
-							<option  value='40'>40</option>
-						</select>
-					</form>
-				</div>
             		
             </div>
           </div>
@@ -149,7 +134,7 @@
    </div>
               		";
    }else{
-	echo "<script>alert('No haz iniciado sesi�n, debes iniciar sesi�n para administrar tu cuenta.');</script>";
+	echo "<script>alert('No haz iniciado sesión, debes iniciar sesión para administrar tu cuenta.');</script>";
 	header ("Location: ../");
    }
         ?>
