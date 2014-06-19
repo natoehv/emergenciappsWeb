@@ -32,9 +32,17 @@
 	height: auto;
 	text-align: left;
 	margin-left: 0px;
+	right: 0px;
+	margin-right: 0px;
+	min-width: 0px;
+	max-width: 100%;
 		}
 		.lbGallery ul { list-style: none; margin:0;padding:0; }
-		.lbGallery ul li { display: inline;margin:0;padding:0; }
+		.lbGallery ul li {
+	display: inline-table;
+	margin: 0;
+	padding: 0;
+}
 		.lbGallery ul li a{text-decoration:none;}
 			
 		.lbGallery ul li a img {
@@ -95,8 +103,7 @@
           </div>
           <div class="checkbox">
             <label>
-              <input type="checkbox">
-              No cerrar sesión </label>
+              <input type="checkbox">No cerrar sesión </label>
           </div>
           <button class="btn btn-default">Entrar</button>
         </form>
@@ -181,8 +188,7 @@
 <!-- /Callout --> 
 
 <!-- Portfolio -->
-<div id="portfolio" class="portfolio">
-  
+<div id="portfolio" class="portfolio">  
     <div class="row">
       <div class="col-md-4 col-md-offset-4 text-center">
         <h2>Galería de imagenes</h2>
@@ -194,7 +200,7 @@
 					<a href="img/portada.jpg" title=""><img src="img/portada.jpg" width="72" height="100" alt="Portada" /></a>
 				</li>
 				<li>
-					<a href="img/menu.jpg" title=""><img src="img/menu.jpg" width="72" height="100" alt="Menú" /></a>
+					<a href="imag/menu.jpg" title=""><img src="img/menu.jpg" width="72" height="100" alt="Menú" /></a>
 				</li>
 				<li>
 					<a href="img/ambulancia.jpg" title=""><img src="img/ambulancia.jpg" width="72" height="100" alt="" /></a>
@@ -205,11 +211,10 @@
 				<li>
 					<a href="img/carabinero.jpg" title=""><img src="img/carabinero.jpg" width="72" height="100" alt="" /></a>
 				</li>
-			</ul>
-		
-    </div>
+			</ul>		
+    	</div>
+  	</div>
   </div>
-    </div>
  
 <!-- /Portfolio --> 
 <!-- Callout Bomberos -->
@@ -267,15 +272,13 @@
 <div id="portfolio" class="portfolio">
   
     <div class="row">
-      <div class="col-md-4 col-md-offset-4 text-center">
-        <h2>Galería de imagenes</h2>
+      
+        <h2 align="center">Galería de imagenes</h2>
         <hr>
-      </div>
-		<div id="gallery" class="lbGallery">
+      
+		<div id="gallery" class="lbGallery" align="center">
 			<ul>
-				<li>
-					<a href="img/portada.jpg" title=""><img src="img/portada.jpg" width="72" height="100" alt="Portada" /></a>
-				</li>
+				<li></li>
 				<li>
 					<a href="img/menu.jpg" title=""><img src="img/menu.jpg" width="72" height="100" alt="Menú" /></a>
 				</li>
@@ -288,6 +291,7 @@
 				<li>
 					<a href="img/carabinero.jpg" title=""><img src="img/carabinero.jpg" width="72" height="100" alt="" /></a>
 				</li>
+		      <a href="img/portada.jpg" title=""><img src="img/portada.jpg" width="72" height="100" alt="" /></a>
 			</ul>
 		
     </div>
@@ -304,10 +308,10 @@
 	<h1>Contactanos</h1>
 	<form action="#" method="post">
 		<fieldset>
-			<label for="name">Nombre:</label>
+			<label for="namef">Nombre:</label>
 			<input type="text" id="name" placeholder="Ingresa tu nombre" />
 			
-			<label for="email">Email:</label>
+			<label for="emailf">Email:</label>
 			<input type="email" id="email" placeholder="Ingresa tu e-mail" />
 			
 			<label for="message">Mensaje:</label>
