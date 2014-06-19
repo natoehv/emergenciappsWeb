@@ -1,7 +1,7 @@
 <?php
 
 include_once('Conexion.php');
-include_once('../logica/contacto.php');
+include_once('../logica/Contacto.php');
 
 class ContactoDAO{
     
