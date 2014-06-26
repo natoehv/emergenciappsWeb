@@ -3070,6 +3070,7 @@ input[type="button"].btn-block {
 }
 .open > .dropdown-menu {
   display: block;
+  background: black;
 }
 .open > a {
   outline: 0;
