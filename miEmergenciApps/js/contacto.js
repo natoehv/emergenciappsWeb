@@ -80,15 +80,40 @@ var contacto = (function() {
         vaciaTabla: function(tabla) {
           console.log('tabla ocultada');
         },
-        agregarContacto: function(){
-            console.log('Cargando nuevo contacto');
+        
+        validaDatosContacto: function(){
             nombre = $("#nombre").val();
-            codA = $("#codA").val();
-            validacion_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
             nroTelefono = $("#nroTelefono").val();
             email = $("#email").val();
             console.log('Ingresando contacto: ' + nombre);
-            var datos = 'nombre='+ nombre + '&codA=' + codA + '&nroTelefono=' + nroTelefono + '&email=' + email;
+            var datos = 'nombre='+ nombre + '&nroTelefono=' + nroTelefono + '&email=' + email;
+            if(nombre == ""){
+                console.error("Error en nombre");
+            }else{
+                if(nroTelefono.length != 8){
+                    console.error("Error en nroTelefono");
+                }
+                else{
+                    if(!contacto.validarMail(email)){
+                        console.error("Error en mail");
+                    }else{
+                        contacto.agregarContacto(datos);
+                    }
+                }
+            }
+        },
+        
+        validarMail: function(mail){
+             if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail)){
+                return true;
+             }else{
+                return false;
+             }
+        },
+                
+        agregarContacto: function(datos){
+            console.log('Cargando nuevo contacto');
+            
             $.ajax({
                 type: "POST",
                 url: "agregaContacto.php",
@@ -97,7 +122,7 @@ var contacto = (function() {
                     console.log("Ajax ejecutado correctamente (Agregar nuevo contacto "+response +")");
                     //TODO mensaje contacto agregado
                     
-                    //contacto.cargaContenido('contactos.php');
+                    contacto.cargaContenido('contactos.php');
                     
                    
                 },

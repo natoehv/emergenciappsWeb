@@ -6,7 +6,7 @@ if(!(isset($_SESSION['usuario']))){
 	header ("Location: ../");
 	
 }
-$usuario =  (object) $_SESSION['usuario'];
+$usuario =   $_SESSION['usuario'];
 $prin = Sistema::getInstancia();
 $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
 /*
@@ -145,7 +145,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
               <div class="panel-heading">
                 <div class="row">
                   <div class="col-xs-6">
-                    <i class="fa fa-comments fa-5x"></i>
+                    <i class="fa fa-users fa-5x"></i>
                   </div>
                   <div class="col-xs-6 text-right">
                     <p class="announcement-heading"><?php echo $nro;?></p>
@@ -176,7 +176,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
                   </div>
                   <div class="col-xs-6 text-right">
                     <p class="announcement-heading">0</p>
-                    <p class="announcement-text">Favoritos</p>
+                    <p class="announcement-text">N° de Favoritos</p>
                   </div>
                 </div>
               </div>
@@ -184,7 +184,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
-                      Ver Favoritos
+                      Ver Favoritos...
                     </div>
                     <div class="col-xs-6 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
@@ -238,7 +238,7 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
-                      Ver Mensajes
+                      Ver Mensajes...
                     </div>
                     <div class="col-xs-6 text-right">
                       <i class="fa fa-arrow-circle-right"></i>

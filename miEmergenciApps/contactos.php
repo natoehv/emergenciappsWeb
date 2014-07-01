@@ -45,7 +45,13 @@
    	<?php 	
    //Buscar contactos he insertar
    	if($resultado == null){
-   		echo "<tr><td colspan='1' class='text-center' >todavía no haz agregado niun contacto</td></tr>";
+   		echo "<tr><td colspan='1' class='text-center' >todavía no haz agregado niun contacto</td>
+                    <td colspan='1' class='text-center' >todavía no haz agregado niun contacto</td>
+                    <td colspan='1' class='text-center' >todavía no haz agregado niun contacto</td>
+                    <td colspan='1' class='text-center' >todavía no haz agregado niun contacto</td>
+                    <td colspan='1' class='text-center' >todavía no haz agregado niun contacto</td>
+                    <td colspan='1' class='text-center' >todavía no haz agregado niun contacto</td>
+</tr>";
    	}else{
 	   foreach ($resultado as $contacto){
 			// Se obtiene estado del contacto
@@ -87,7 +93,7 @@
    <div class='container' style='display:none; cursor:default'>
 	   <legend>Nuevo Contacto</legend>
 	   <div class='well'>
-	   <form id='signup' class='form-horizontal col-sm-10' style='cursor:default;' onSubmit='return false;'>
+	   <form id='signup' class='form-horizontal' style='cursor:default;' onSubmit='return false;'>
 		   <legend style='color: white;'>Nuevo Contacto</legend>
 		   <div class='control-group'>
 			   <div class='controls'>
@@ -99,7 +105,7 @@
 		   </div>
 		   <div class='control-group'>
                          <div class='controls'>
-                             <div class='form-group input-group'>
+                             <div class='input-group'>
                                  <span class='input-group-addon'>+569</span>
                                  <input class='form-control' maxlength='8'type='number' id='nroTelefono' name='nroTelefono' placeholder='N° Telefonico'>
                              </div>
@@ -118,7 +124,7 @@
 		   <div class='control-group'>
 		   <label class='control-label'></label>
 				<div class='controls'>
-			   		<button onClick='contacto.agregarContacto();' class='btn btn-success' >Agregar Contacto</button>
+			   		<button onClick='contacto.validaDatosContacto();' class='btn btn-success' >Agregar Contacto</button>
 			   	</div>
 		   
 		   </div>
