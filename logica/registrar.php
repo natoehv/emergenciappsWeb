@@ -1,7 +1,8 @@
 <?php
 
-include_once 'logica/Sistema.php';
-include_once 'logica/Usuario.php';
+include_once 'Sistema.php';
+include_once 'Usuario.php';
+
 $nombre = $_POST['fname'];
 $apellido = $_POST['lname'];
 $mail = $_POST['email'];
@@ -13,7 +14,7 @@ if(!($nombre == "" || $apellido == "" || $mail == "" || $telefono == "" || $pass
         /*
          * Ingresar Nuevamente contraseña
          */
-        echo "<script>alert('no cohincide rut');</script>";
+        echo "<script>alert('no cohincide pass');</script>";
         header ("Location: register.php");
     }else{
         $control = Sistema::getInstancia();
@@ -26,7 +27,7 @@ if(!($nombre == "" || $apellido == "" || $mail == "" || $telefono == "" || $pass
         $control->saveUsuario($usuario);
         session_start();
         $_SESSION['usuario'] = $usuario;
-        header ("Location: miEmergenciApps");      
+        header ("Location: ../miEmergenciApps");      
     }
 }else{
     echo "error desde registrar.php";

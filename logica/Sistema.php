@@ -22,6 +22,9 @@ include_once '../persistencia/ContactoDAO.php';
             }
             return self::$miInstancia;
         }
+        public function saveUsuario($usuario){
+            $this->usuario->save($usuario);
+        }
 		
 		public function getUsuario($usuario){
 			$usuarioAux = $this->usuario->getUsuario($usuario);

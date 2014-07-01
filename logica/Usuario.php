@@ -15,7 +15,7 @@ class Usuario{
 		$this->nombre = $nombre;
 	}
 	public function getApellido() {
-		return $this->nombre;
+		return $this->apellido;
 	}
 	public function setApellido($apellido) {
 		$this->apellido = $apellido;

@@ -13,11 +13,13 @@ class UsuarioDAO{
             $this->cone= new Conexion();
     }
     
-    public function ingresarUsuarioDAO($usuario){
+    public function save($usuario){
         $link=$this->cone->obtenerConexion();
-        $laConsulta="INSERT into usuario (correo, contrasena, nro_telefono ) VALUES 
-            (".$usuario->getCorreo().",'".$usuario->getContrasena()."','".$usuario->getNroTelefono()."');";
-        mysql_query($laConsulta,$link)or die("<script>alert('No fue posible insertar usuario en base de datos')</script>");
+        $laConsulta="INSERT into usuario (nombre, apellidos, correo, contrasena, nro_telefono ) VALUES 
+            ('".$usuario->getNombre()."','".$usuario->getApellido()."','".$usuario->getCorreo()."','".$usuario->getContrasena()."','".$usuario->getNroTelefono()."');";
+        mysql_query($laConsulta,$link)or 
+                die("<script>alert('No fue posible insertar usuario en base de datos')</script>
+            $laConsulta");
         mysql_close($link);
     }
 	 public function getUsuario($usuario){
