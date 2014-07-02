@@ -16,8 +16,9 @@ $contacto->setNroContacto("+569".$nroContacto);
 
 $control = Sistema::getInstancia();
 $control->saveContacto($contacto);
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Buscar contacto y enviar notificacion
  */
+
+
 ?>

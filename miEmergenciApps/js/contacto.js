@@ -88,13 +88,16 @@ var contacto = (function() {
             console.log('Ingresando contacto: ' + nombre);
             var datos = 'nombre='+ nombre + '&nroTelefono=' + nroTelefono + '&email=' + email;
             if(nombre == ""){
+                $("#nombre").focus();
                 console.error("Error en nombre");
             }else{
                 if(nroTelefono.length != 8){
+                    $("#nroTelefono").focus();
                     console.error("Error en nroTelefono");
                 }
                 else{
                     if(!contacto.validarMail(email)){
+                        $("#email").focus();
                         console.error("Error en mail");
                     }else{
                         contacto.agregarContacto(datos);
