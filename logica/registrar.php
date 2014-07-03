@@ -30,7 +30,7 @@ if(!($nombre == "" || $apellido == "" || $mail == "" || $telefono == "" || $pass
         header ("Location: ../miEmergenciApps");      
     }
 }else{
-    echo "error desde registrar.php";
-    //header ("Location: register.html");
+    //echo "error desde registrar.php";
+    header ("Location: register.html");
 }
 ?>

@@ -16,46 +16,50 @@ class UsuarioDAO{
     public function save($usuario){
         $link=$this->cone->obtenerConexion();
         $laConsulta="INSERT into usuario (nombre, apellidos, correo, contrasena, nro_telefono ) VALUES 
-            ('".$usuario->getNombre()."','".$usuario->getApellido()."','".$usuario->getCorreo()."','".$usuario->getContrasena()."','".$usuario->getNroTelefono()."');";
+            ('".$usuario->getNombre()."','".$usuario->getApellido()."','".$usuario->getCorreo()."','".$usuario->getEncriptada()."','".$usuario->getNroTelefono()."');";
         mysql_query($laConsulta,$link)or 
                 die("<script>alert('No fue posible insertar usuario en base de datos')</script>
             $laConsulta");
         mysql_close($link);
     }
-	 public function getUsuario($usuario){
-		$link=$this->cone->obtenerConexion();
-		$laConsulta="	SELECT 	*
-						FROM	usuario
-						WHERE	correo='".$usuario->getCorreo()."';";
-		$resultado = mysql_query($laConsulta,$link)or die("<script>alert('No fue posible obtener usuario de base de datos')</script>");
-		$row = mysql_fetch_array($resultado);
-		if(count($row)>0){
-		$usuario = new Usuario();
-		$usuario->setCorreo($row['correo']);
-		$usuario->setContrasena($row['contrasena']);
-		$usuario->setNroTelefono($row['nro_telefono']);;
-		$usuario->setApellido($row['apellidos']);
-		$usuario->setNombre($row['nombre']);
-		return $usuario;
-		}else{
-			return null;
-		}
-	 }
-	public function getUsuarioPorNro($nro){
-		$link=$this->cone->obtenerConexion();
-		$laConsulta="	SELECT 	*
-						FROM	usuario
-						WHERE	correo='".$nro."';";
-		$resultado = mysql_query($laConsulta,$link)or die("<script>alert('No fue posible obtener usuario de base de datos')</script>");
-		while($row = mysql_fetch_array($resultado)){
-			$usuario = new Usuario();
-			$usuario->setCorreo($row['correo']);
-			$usuario->setNroTelefono($row['nro_telefono']);;
-			$usuario->setApellido($row['apellidos']);
-			$usuario->setNombre($row['nombre']);
-		}
-		return $usuario;
-	}
+    public function getUsuario($usuario){
+           $link=$this->cone->obtenerConexion();
+           $laConsulta="	SELECT 	*
+                                           FROM	usuario
+                                           WHERE	correo='".$usuario->getCorreo()."';";
+           $resultado = mysql_query($laConsulta,$link)or die("<script>alert('No fue posible obtener usuario de base de datos')</script>");
+           $row = mysql_fetch_array($resultado);
+           if(count($row)>0){
+           $usuario = new Usuario();
+           $usuario->setCorreo($row['correo']);
+           $usuario->setContrasena($row['contrasena']);
+           $usuario->setNroTelefono($row['nro_telefono']);;
+           $usuario->setApellido($row['apellidos']);
+           $usuario->setNombre($row['nombre']);
+           return $usuario;
+           }else{
+                   return null;
+           }
+    }
+    
+    public function findByExample(){
+        
+    }
+    public function getUsuarioPorNro($nro){
+            $link=$this->cone->obtenerConexion();
+            $laConsulta="	SELECT 	*
+                                            FROM	usuario
+                                            WHERE	correo='".$nro."';";
+            $resultado = mysql_query($laConsulta,$link)or die("<script>alert('No fue posible obtener usuario de base de datos')</script>");
+            while($row = mysql_fetch_array($resultado)){
+                    $usuario = new Usuario();
+                    $usuario->setCorreo($row['correo']);
+                    $usuario->setNroTelefono($row['nro_telefono']);;
+                    $usuario->setApellido($row['apellidos']);
+                    $usuario->setNombre($row['nombre']);
+            }
+            return $usuario;
+    }
 		
 	
     

@@ -33,8 +33,13 @@ class Usuario{
 	}
 
 	public function setContrasena($contrasena) {
+                
 		$this->contrasena = $contrasena;
 	}
+        public function getEncriptada(){
+            $frase='$2a$07$udsds34543derr76.ere$';
+            return crypt($this->contrasena, $frase);
+        }
 
 
 	public function getNroTelefono() {

@@ -7,12 +7,13 @@ $contrasena =$_POST['password'];
 $usuario = new Usuario();
 $usuario->setCorreo($correo);
 $usuario->setContrasena($contrasena);
-
+$user = $usuario;
 $prin = Sistema::getInstancia();
 
 $usuario = $prin->getUsuario($usuario);
 if($usuario == null){
-	echo "no existe cuenta";
+	echo "<script>alert('El nombre de usuario o contraseña es incorreto');</script>";
+        header ("Location: ../");
 }else{
 	/*
 	 * Se guardan los datos del usuario registrado en sesion

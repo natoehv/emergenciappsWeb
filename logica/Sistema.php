@@ -31,12 +31,7 @@ include_once '../persistencia/ContactoDAO.php';
         }
         public function getUsuario($usuario){
                 $usuarioAux = $this->usuario->getUsuario($usuario);
-                /*
-                $contrasenaMD5 = md5($cuenta->getContrasena())
-                if($contrasenaMD5 == $cuentaAux->getContrasena())
-                        return $cuentaAux;
-                        */
-                if($usuario->getContrasena() == $usuarioAux->getContrasena())
+                if($usuario->getEncriptada() == $usuarioAux->getContrasena())
                         return $usuarioAux;
         }
         // Funcion encargada de obtener los contactos de un usuario
