@@ -60,7 +60,7 @@ $newNotifications = $prin->findNewNotifications($usuario);
             <li class="active" id="li_inicio"><a href="index.php"><i class="fa fa-dashboard"></i> Mis Datos</a></li>
             <li id="li_contacto"><a href="javascript:contacto.cargaContenido('contactos.php');" id="contactos"><i class="fa fa-comments"></i> Contactos</a></li>
             <li id='li_configuracion'><a href="javascript:configuracion.cargaContenido();" ><i class="fa fa-cog fa-spin"></i> Configuración</a></li>
-            <li><a href="forms.html"><i class="fa fa-question-circle"></i> Ayuda</a></li>
+            <li><a href="#"><i class="fa fa-question-circle"></i> Ayuda</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right navbar-user">
