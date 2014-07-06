@@ -14,8 +14,8 @@ if(!($nombre == "" || $apellido == "" || $mail == "" || $telefono == "" || $pass
         /*
          * Ingresar Nuevamente contraseña
          */
-        echo "<script>alert('no cohincide pass');</script>";
-        header ("Location: register.php");
+        echo "<script>  alert('no cohincide pass');
+                        window.locationf='register.php';</script>";
     }else{
         $control = Sistema::getInstancia();
         $usuario = new Usuario();

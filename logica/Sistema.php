@@ -1,6 +1,8 @@
 <?php
 include_once '../persistencia/UsuarioDAO.php';
 include_once '../persistencia/ContactoDAO.php';
+include_once '../persistencia/NotificacionDAO.php';
+include_once 'Notificacion.php';
 
 
 
@@ -9,11 +11,12 @@ include_once '../persistencia/ContactoDAO.php';
         private static $miInstancia=NULL;
         private $usuario;
         private $contacto;
-        //private $cajero;
+        private $notificacion;
 
         private function Sistema(){
             $this->usuario = new UsuarioDAO();
             $this->contacto = new ContactoDAO();
+            $this->notificacion = new NotificacionDAO();
        }
         
         public static function  getInstancia(){
@@ -27,7 +30,16 @@ include_once '../persistencia/ContactoDAO.php';
         }
 	
         public function saveContacto($contacto){
+            session_start();
+            $usuario = $_SESSIO['usuario'];
             $this->contacto->save($contacto);
+            $noti  = new Notificacion();
+            $noti->setDescripcion("El usuario ".$usuario->getNombre()." te ha agregado como contacto");
+            $noti->setIdUsuario($contacto->getNroContacto()); // A quien notifica
+            $noti->setIdUsuarioNotifica($contacto->getNroUsuario()); //quien notifica
+            $noti->setTipo(0);
+            $noti->setVista(0);
+            $this->notificacion->save($noti);
         }
         public function getUsuario($usuario){
                 $usuarioAux = $this->usuario->getUsuario($usuario);
@@ -61,6 +73,13 @@ include_once '../persistencia/ContactoDAO.php';
         public function agregaNuevoContacto($idUsuario, $contacto){
             //retorna error o correcto
             return $this->contacto->ingresaNuevo($idUsuario, $contacto);
+        }
+        public function findAllNotifications($usuario){
+            return $this->notificacion->findAll($usuario);
+        }
+        
+        public function findNewNotifications($usuario){
+            return $this->notificacion->findNews($usuario);
         }
     }
 ?>

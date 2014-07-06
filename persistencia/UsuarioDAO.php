@@ -42,7 +42,35 @@ class UsuarioDAO{
            }
     }
     
-    public function findByExample(){
+    public function findByExample($usuario){
+        $link=$this->cone->obtenerConexion();
+        $laConsulta = " SELECT * FROM predio";
+        $conector = "WHERE";
+        /*
+         * Verifico valores que vienen en el ejemplo
+         */
+        if($usuario->getCorreo() != ""){
+            $laConsulta = $laConsulta." ".$conector." ID_PREDIO = $usuario->getCorreo()";
+            $conector  = "AND";
+        }
+            
+        if($usuario->getContrasena() != ""){
+            $laConsulta = $laConsulta." ".$conector." NOMBRE = $usuario->getContrasena()";
+            $conector  = "AND";
+        }
+        $resultado = mysql_query($laConsulta,$link)or die("<script>alert('No fue posible obtener usuario de base de datos')</script>");
+           $row = mysql_fetch_array($resultado);
+           if(count($row)>0){
+           $usuario = new Usuario();
+           $usuario->setCorreo($row['correo']);
+           $usuario->setContrasena($row['contrasena']);
+           $usuario->setNroTelefono($row['nro_telefono']);;
+           $usuario->setApellido($row['apellidos']);
+           $usuario->setNombre($row['nombre']);
+           return $usuario;
+           }else{
+                   return null;
+           }
         
     }
     public function getUsuarioPorNro($nro){

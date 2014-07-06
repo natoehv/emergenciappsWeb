@@ -1,6 +1,7 @@
 <?php 
 include_once '../logica/Usuario.php';
 include_once '../logica/Sistema.php';
+include_once '../logica/Notificacion.php';
 session_start();
 if(!(isset($_SESSION['usuario']))){
 	header ("Location: ../");
@@ -9,6 +10,8 @@ if(!(isset($_SESSION['usuario']))){
 $usuario =   $_SESSION['usuario'];
 $prin = Sistema::getInstancia();
 $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
+$notifications = $prin->findAllNotifications($usuario);
+$newNotifications = $prin->findNewNotifications($usuario);
 /*
  * Instanciar la clase sistema
  */
@@ -62,37 +65,21 @@ $nro = $prin->getCantidadContactos($usuario->getNroTelefono());
 
           <ul class="nav navbar-nav navbar-right navbar-user">
             <li class="dropdown messages-dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span class="badge">7</span> <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span class="badge"><?php echo count($newNotifications);?></span> <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li class="dropdown-header">7 New Messages</li>
+                <li class="dropdown-header"><?php echo count($newNotifications);?> New Messages</li>
+                <?php foreach($notifications as $noti){  ?>
                 <li class="message-preview">
                   <a href="#">
-                    <span class="avatar"><img src="http://placehold.it/50x50"></span>
-                    <span class="name"></span>
-                    <span class="message">Hey there, I wanted to ask you something...</span>
-                    <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+                    <!--span class="avatar"><img src="http://placehold.it/50x50"></span-->
+                    <span class="name"><?php ?></span>
+                    <span class="message"><?php $noti->getDescripcion();?></span>
+                    <span class="time"><i class="fa fa-clock-o"></i> <?php $noti->getFecha(); ?></span>
                   </a>
                 </li>
                 <li class="divider"></li>
-                <li class="message-preview">
-                  <a href="#">
-                    <span class="avatar"><img src="http://placehold.it/50x50"></span>
-                    <span class="name">John Smith:</span>
-                    <span class="message">Hey there, I wanted to ask you something...</span>
-                    <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
-                  </a>
-                </li>
-                <li class="divider"></li>
-                <li class="message-preview">
-                  <a href="#">
-                    <span class="avatar"><img src="http://placehold.it/50x50"></span>
-                    <span class="name">John Smith:</span>
-                    <span class="message">Hey there, I wanted to ask you something...</span>
-                    <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
-                  </a>
-                </li>
-                <li class="divider"></li>
-                <li><a href="#">View Inbox <span class="badge">7</span></a></li>
+                <?php } ?>
+                <li><a href="#">View Inbox <span class="badge"><?php echo count($newNotifications);?></span></a></li>
               </ul>
             </li>
             <li class="dropdown alerts-dropdown">

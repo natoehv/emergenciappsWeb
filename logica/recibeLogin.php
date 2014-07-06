@@ -7,13 +7,12 @@ $contrasena =$_POST['password'];
 $usuario = new Usuario();
 $usuario->setCorreo($correo);
 $usuario->setContrasena($contrasena);
-$user = $usuario;
 $prin = Sistema::getInstancia();
 
 $usuario = $prin->getUsuario($usuario);
 if($usuario == null){
-	echo "<script>alert('El nombre de usuario o contraseña es incorreto');</script>";
-        header ("Location: ../");
+	echo "<script>alert('El nombre de usuario o contraseña es incorreto');
+                        location.href='../';</script>";
 }else{
 	/*
 	 * Se guardan los datos del usuario registrado en sesion
