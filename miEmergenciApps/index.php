@@ -67,14 +67,14 @@ $newNotifications = $prin->findNewNotifications($usuario);
             <li class="dropdown messages-dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span class="badge"><?php echo count($newNotifications);?></span> <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li class="dropdown-header"><?php echo count($newNotifications);?> New Messages</li>
+                <li class="dropdown-header"><?php echo count($newNotifications);?> nuevos mensajes</li>
                 <?php foreach($notifications as $noti){  ?>
                 <li class="message-preview">
                   <a href="#">
                     <!--span class="avatar"><img src="http://placehold.it/50x50"></span-->
                     <span class="name"><?php ?></span>
-                    <span class="message"><?php $noti->getDescripcion();?></span>
-                    <span class="time"><i class="fa fa-clock-o"></i> <?php $noti->getFecha(); ?></span>
+                    <span class="message"><?php echo $noti->getDescripcion();?></span>
+                    <span class="time"><i class="fa fa-clock-o"></i> <?php echo $noti->getFecha(); ?></span>
                   </a>
                 </li>
                 <li class="divider"></li>

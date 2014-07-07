@@ -67,7 +67,7 @@ class Notificacion {
         return $this->vista;
     }
 
-    public function setVista(type $vista) {
+    public function setVista($vista) {
         $this->vista = $vista;
     }
 

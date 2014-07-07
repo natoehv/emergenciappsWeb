@@ -8,7 +8,6 @@ $usuario = new Usuario();
 $usuario->setCorreo($correo);
 $usuario->setContrasena($contrasena);
 $prin = Sistema::getInstancia();
-
 $usuario = $prin->getUsuario($usuario);
 if($usuario == null){
 	echo "<script>alert('El nombre de usuario o contraseña es incorreto');

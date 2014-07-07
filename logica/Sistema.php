@@ -31,7 +31,7 @@ include_once 'Notificacion.php';
 	
         public function saveContacto($contacto){
             session_start();
-            $usuario = $_SESSIO['usuario'];
+            $usuario = $_SESSION['usuario'];
             $this->contacto->save($contacto);
             $noti  = new Notificacion();
             $noti->setDescripcion("El usuario ".$usuario->getNombre()." te ha agregado como contacto");

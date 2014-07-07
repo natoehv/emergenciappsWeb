@@ -17,8 +17,8 @@ class NotificacionDAO {
     
     public function save($noti){
         $link=$this->cone->obtenerConexion();
-        $laConsulta="INSERT into notificacion (fecha, id_usuario, id_usuario_noti, vista, tipo) VALUES 
-            (sysdate(),'".$noti->getIdUsuario()."','".$noti->getVista()."','".$noti->getTipo()."');";
+        $laConsulta="INSERT into notificacion (fecha, id_usuario, id_usuario_noti, vista, tipo, descripcion) VALUES 
+            (sysdate(),'".$noti->getIdUsuario()."','".$noti->getIdUsuarioNotifica()."','".$noti->getVista()."','".$noti->getTipo()."','".$noti->getDescripcion()."');";
         mysql_query($laConsulta,$link)or die("ERROR AL AGREGAR Notificacion $laConsulta");
         mysql_close($link);
     }
